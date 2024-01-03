@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Prop {
+  post: CollectionEntry<"blog">;
+}
+
+const {
+  post: {
+    data: { title, description, date },
+    slug,
+  },
+} = Astro.props;
+---
+
+<article class="flex flex-col justify-between gap-3">
+  <div class="flex justify-between">
+    <a href={`/blog/${slug}`} class="text-xl">
+      <span>
+        {title}
+      </span>
+    </a>
+    <span>
+      {date}
+    </span>
+  </div>
+
+  <p>{description}</p>
+</article>

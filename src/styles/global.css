@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  p {
+    margin: revert;
+  }
 
+  a {
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  a:hover,
+  a:focus-visible {
+    opacity: 1;
+  }
+}
 
 @layer components {
-    .border-primary {
-      @apply border-gray border-2 border-solid
-    }
+  .border-primary {
+    @apply border-gray border-2 border-solid;
   }
+
+  a:hover {
+    cursor: pointer;
+  }
+}

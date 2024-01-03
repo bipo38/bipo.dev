@@ -1,0 +1,15 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import PostPreview from "../../components/PostPreview.astro";
+
+const posts = await getCollection("blog");
+console.log(posts);
+---
+
+<Base>
+  <main class="flex flex-col gap-4">
+    <h1 class="text-2xl">Blog</h1>
+    {posts.map((post) => <PostPreview {post} />)}
+  </main>
+</Base>

@@ -1,6 +1,7 @@
 ---
 import TheHeader from "../components/TheHeader.astro";
 import "../styles/global.css";
+import "@fontsource-variable/nunito";
 ---
 
 <!doctype html>
@@ -13,7 +14,7 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Bipo Blog</title>
   </head>
-  <body class="bg-main text-main px-4 py-8 max-w-2xl mr-auto ml-auto">
+  <body class="bg-main text-main px-4 py-8 max-w-4xl mr-auto ml-auto font-sans">
     <TheHeader />
     <slot />
   </body>

@@ -1,12 +1,23 @@
 ---
-
+import { Image } from "astro:assets";
+import Logo from "../assets/svg/logo.svg";
 ---
 
-<header class="flex justify-between px-4 py-6">
-  <div>Bipo</div>
+<header class="flex justify-between py-6">
+  <a href="/" class="flex items-center gap-4">
+    <Image src={Logo} alt="Logo" class="w-8 h-8" />
+    <h1 class="text-lg m-0">Bipo</h1>
+  </a>
 
-  <div class="flex gap-4">
-    <a href="/blog">Blog</a>
-    <a href="/other">Stuff</a>
-  </div>
+  <nav>
+    <ul class="flex gap-4">
+      <li><a class="text-lg p-1 rounded-lg" href="/">Home</a></li>
+      <li>
+        <a class="text-lg p-1 rounded-lg" href="/blog">Blog</a>
+      </li>
+      <li>
+        <a class="text-lg p-1 rounded-lg" href="/stuff">Stuff</a>
+      </li>
+    </ul>
+  </nav>
 </header>
