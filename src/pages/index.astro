@@ -9,9 +9,9 @@ import ProjectCard from "../components/ProjectCard.astro";
     <div class="grid grid-rows-2 grid-flow-col gap-4">
       <div class="rounded-md p-4 border-primary"></div>
 
-      <div class="rounded-md p-4 border-primary flex flex-col gap-4">
+      <div class="p-4 flex flex-col gap-4">
         <h2 class="text-xl m-0">Projects</h2>
-        <div class="flex gap-8">
+        <div class="flex gap-4">
           {projects.map((project) => <ProjectCard {project} />)}
         </div>
       </div>

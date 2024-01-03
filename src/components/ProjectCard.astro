@@ -11,12 +11,27 @@ interface Prop {
 const {
   project: { name, description, tags, link },
 } = Astro.props;
+
+const tagsColors: Record<string, string> = {
+  go: "text-go",
+  vue: "text-vue",
+  nuxt: "text-nuxt",
+  hono: "text-hono",
+  scss: "text-scss",
+  typescript: "text-typescript",
+};
 ---
 
-<div class="max-w-[20rem] flex flex-col gap-4">
-  <a href={link} target="_blank" class="flex-1 underline">{name}</a>
-  <p class="m-0 flex-1">{description}</p>
-  <div class="flex gap-2 flex-1">
-    {tags.map((tag: string) => <span class={tag}>{tag}</span>)}
+<div
+  class="max-w-[14rem] flex flex-col gap-2 border-primary p-[0.75rem] rounded-lg shadow-md"
+>
+  <a href={link} target="_blank" class="underline text-lg">{name}</a>
+  <p class="m-0">{description}</p>
+  <div class="flex gap-2 mb-auto flex-wrap">
+    {
+      tags.map((tag: string) => (
+        <span class={`${tagsColors[tag]} opacity-65 capitalize`}>{tag}</span>
+      ))
+    }
   </div>
 </div>

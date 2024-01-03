@@ -18,6 +18,8 @@
     opacity: 1;
     transition: ease-in 0.2s;
   }
+
+
 }
 
 @layer components {
@@ -28,6 +30,8 @@
   .mg-revert {
     margin: revert;
   }
+
+ 
 
   .lk-base {
     @apply hover:opacity-100 transition ease-in delay-75 opacity-70;
