@@ -1,0 +1,22 @@
+[
+  {
+    "name": "isaac-tui ",
+    "link": "https://github.com/bipo38/isaac-tui",
+    "description": " A tui to retrieve data about the The Binding of Isaac game.",
+    "tags": [
+      "go"
+    ]
+  },
+  {
+    "name": "litehouse ",
+    "link": "https://github.com/bipo38/litehouse",
+    "description": "A small web app to track your web page vitals with Lighthouse or PageSpeed.",
+    "tags": [
+      "vue",
+      "nuxt",
+      "hono",
+      "scss",
+      "typescript"
+    ]
+  }
+]

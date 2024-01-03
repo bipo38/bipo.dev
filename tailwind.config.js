@@ -11,6 +11,7 @@ export default {
     textColor: {
       main: "rgb(212 212 212)",
       invert: "hsl(0, 0%, 9%)",
+      accent: "hsl(22, 72%, 72%)",
     },
     fontFamily: {
       sans: ["Nunito Variable", "sans-serif"],

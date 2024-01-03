@@ -1,0 +1,22 @@
+---
+interface Prop {
+  project: {
+    name: string;
+    link: string;
+    description: string;
+    tags?: Array<string>;
+  };
+}
+
+const {
+  project: { name, description, tags, link },
+} = Astro.props;
+---
+
+<div class="max-w-[20rem] flex flex-col gap-4">
+  <a href={link} target="_blank" class="flex-1 underline">{name}</a>
+  <p class="m-0 flex-1">{description}</p>
+  <div class="flex gap-2 flex-1">
+    {tags.map((tag: string) => <span class={tag}>{tag}</span>)}
+  </div>
+</div>

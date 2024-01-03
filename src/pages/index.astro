@@ -1,22 +1,23 @@
 ---
 import Base from "../layouts/Base.astro";
+import projects from "../assets/projects.json";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Base>
   <main>
     <div class="grid grid-rows-2 grid-flow-col gap-4">
-      
-      <div class="rounded-md p-4 border-primary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veritatis
-        nihil quaerat unde. Dolor esse numquam ex eaque, minus beatae, quo nam
-        veniam fugit rem consequuntur, quasi temporibus dolorem similique.
-      </div>
-      <div class="rounded-md p-4 border-primary">
-        <h2 class="text-xl">Projects</h2>
+      <div class="rounded-md p-4 border-primary"></div>
+
+      <div class="rounded-md p-4 border-primary flex flex-col gap-4">
+        <h2 class="text-xl m-0">Projects</h2>
+        <div class="flex gap-8">
+          {projects.map((project) => <ProjectCard {project} />)}
+        </div>
       </div>
 
       <div class="row-span-2 rounded-md p-4 border-primary">
-        <h2 class="text-center text-xl">Blog</h2>
+        <h2 class="text-center text-xl m-0">Blog</h2>
       </div>
     </div>
   </main>
