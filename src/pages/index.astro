@@ -2,22 +2,65 @@
 import Base from "../layouts/Base.astro";
 import projects from "../assets/projects.json";
 import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { sortByDatePosts as sortByDate } from "../utils.ts";
+
+const posts = await getCollection("blog");
 ---
 
 <Base>
   <main>
-    <div class="grid grid-rows-2 grid-flow-col gap-4">
-      <div class="rounded-md p-4 border-primary"></div>
+    <div class="grid grid-flow-col gap-4">
+      <div class="rounded-md p-4">
+        <p class="m-0">
+          Hi, I'm <span class="text-accent">Bipo</span>. I'm an 19 y/o software
+          developer. I enjoy building stuff and read about art and history.
+        </p>
 
-      <div class="p-4 flex flex-col gap-4">
-        <h2 class="text-xl m-0">Projects</h2>
-        <div class="flex gap-4">
-          {projects.map((project) => <ProjectCard {project} />)}
-        </div>
+        <p>Now I'm currently working as FullStack at Descom.es</p>
       </div>
 
-      <div class="row-span-2 rounded-md p-4 border-primary">
+      <div class="p-4 flex flex-col gap-4 col-span-2">
+        <h2 class="text-xl m-0">Projects</h2>
+        <div class="flex gap-4">
+          {
+            projects
+              .filter((post) => post.pinned)
+              .slice(0, 4)
+              .map((project) => <ProjectCard {project} />)
+          }
+        </div>
+        <a href="/projects" class="lk-base text-center underline"
+          >All projects &rarr;</a
+        >
+      </div>
+
+      <div class="row-span-2">
         <h2 class="text-center text-xl m-0">Blog</h2>
+        <div class="flex flex-col gap-8">
+          {
+            sortByDate(posts)
+              .slice(0, 4)
+              .map((post) => (
+                <>
+                  <div class="flex flex-col gap-2">
+                    <a href={`blog/${post.slug}`} class="underline">
+                      {post.data.title}
+                    </a>
+                    <span class=" text-sm">{post.data.date}</span>
+                    <p class=" line-clamp-2 m-0 text-ellipsis">
+                      {post.data.description}
+                    </p>
+                  </div>
+                </>
+              ))
+          }
+
+          <a href="/blog" class="lk-base text-center underline"
+            >All posts &rarr;</a
+          >
+        </div>
       </div>
     </div>
   </main>

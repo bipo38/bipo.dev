@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 import Base from "../../layouts/Base.astro";
+import BackLink from "../../components/BackLink.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -26,6 +27,8 @@ const { Content } = await post.render();
 ---
 
 <Base>
+  <BackLink url={"/blog"} />
   <h1 class="text-4xl text-center font-medium">{title}</h1>
+  <span class="block mt-2">{date}</span>
   <Content />
 </Base>
