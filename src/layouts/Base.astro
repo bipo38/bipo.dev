@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import TheFooter from "../components/TheFooter.astro";
 import TheHeader from "../components/TheHeader.astro";
 import "../styles/global.css";
@@ -14,6 +15,7 @@ import "@fontsource-variable/nunito";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Bipo Blog</title>
+    <ViewTransitions />
   </head>
   <body
     class="bg-main text-main px-4 py-8 max-w-4xl mr-auto ml-auto font-sans flex flex-col min-h-screen"
@@ -23,5 +25,3 @@ import "@fontsource-variable/nunito";
     <TheFooter />
   </body>
 </html>
-
-<style is:global></style>

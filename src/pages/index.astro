@@ -7,11 +7,14 @@ import type { CollectionEntry } from "astro:content";
 import { sortByDatePosts as sortByDate } from "../utils.ts";
 
 const posts = await getCollection("blog");
+
+const hasBlogs = posts;
+const hasProjects = projects.length > 0;
 ---
 
 <Base>
   <main class="flex-1">
-    <div class="grid grid-flow-col gap-4">
+    <div class="md:grid md:grid-flow-col gap-4 flex flex-col">
       <div class="rounded-md p-4">
         <p class="m-0">
           Hi, I'm <span class="text-accent">Bipo</span>. I'm an 19 y/o software
@@ -23,7 +26,7 @@ const posts = await getCollection("blog");
 
       <div class="p-4 flex flex-col gap-4 col-span-2">
         <h2 class="text-xl m-0">Projects</h2>
-        <div class="flex gap-4">
+        <div class="flex gap-4 flex-wrap md:flex-nowrap">
           {
             projects
               .filter((post) => post.pinned)
@@ -31,13 +34,15 @@ const posts = await getCollection("blog");
               .map((project) => <ProjectCard {project} />)
           }
         </div>
-        <a href="/projects" class="lk-base text-center underline"
-          >All projects &rarr;</a
+        <a
+          href="/projects"
+          class="lk-base text-center underline"
+          class:list={[{ hidden: !hasProjects }]}>All projects &rarr;</a
         >
       </div>
 
-      <div class="row-span-2">
-        <h2 class="text-center text-xl m-0">Blog</h2>
+      <div class="row-span-2 p-4 flex flex-col gap-4">
+        <h2 class="text-xl m-0">Blog</h2>
         <div class="flex flex-col gap-8">
           {
             sortByDate(posts)
@@ -49,7 +54,7 @@ const posts = await getCollection("blog");
                       {post.data.title}
                     </a>
                     <span class=" text-sm">{post.data.date}</span>
-                    <p class=" line-clamp-2 m-0 text-ellipsis">
+                    <p class=" line-clamp-2 m-0 text-ellipsis md:line-clamp-1">
                       {post.data.description}
                     </p>
                   </div>
@@ -57,8 +62,10 @@ const posts = await getCollection("blog");
               ))
           }
 
-          <a href="/blog" class="lk-base text-center underline"
-            >All posts &rarr;</a
+          <a
+            href="/blog"
+            class="lk-base text-center underline"
+            class:list={[{ hidden: !hasBlogs }]}>All posts &rarr;</a
           >
         </div>
       </div>
