@@ -10,8 +10,14 @@ import BackLink from "../components/BackLink.astro";
     <BackLink url="/" />
     <h1 class="text-2xl mb-0">Projects</h1>
 
+    <input
+      type="text"
+      id="search-bar"
+      class="p-4 outline-none bg-main border-primary text-sm rounded-md"
+    />
+
     <div class="flex gap-4">
-      {projects.slice(0, 4).map((project) => <ProjectCard {project} />)}
+      {projects.map((project) => <ProjectCard {project} />)}
     </div>
   </main>
 </Base>
