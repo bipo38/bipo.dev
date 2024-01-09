@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+
   h1,
   h2,
   h3,
   p {
     margin: revert;
   }
+
   a:hover {
     cursor: pointer;
   }
@@ -29,7 +31,8 @@
     margin: revert;
   }
 
-  .lk-base {
+  .lk-base,
+  .lk-base a {
     @apply hover:opacity-100 transition ease-in delay-75 opacity-70;
   }
 }
