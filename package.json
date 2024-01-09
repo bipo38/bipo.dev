@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/mdx": "^2.0.3",
+    "@astrojs/node": "^7.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource-variable/nunito": "^5.0.17",
