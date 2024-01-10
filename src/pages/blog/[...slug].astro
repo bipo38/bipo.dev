@@ -20,7 +20,7 @@ type Props = {
 const {
   post,
   post: {
-    data: { title, description, date },
+    data: { title, date },
   },
 } = Astro.props;
 const { Content } = await post.render();

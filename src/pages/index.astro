@@ -3,7 +3,6 @@ import Base from "../layouts/Base.astro";
 import projects from "../assets/projects.json";
 import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import { sortByDatePosts as sortByDate } from "../utils.ts";
 
 const posts = await getCollection("blog");
