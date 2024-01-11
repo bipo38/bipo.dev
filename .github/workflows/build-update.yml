@@ -15,7 +15,8 @@ jobs:
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           script: |
-            cd ./git/bipo.dev
+            cd /${{secrets.HOST}}/git/bipo.dev
             git pull
             pnpm run build
             cp -r ./dist/* /var/www/bipo.dev/
+1
