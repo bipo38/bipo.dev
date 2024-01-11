@@ -15,8 +15,8 @@ jobs:
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           script: |
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh
+            export PNPM_DIR=~/.nvm
+            source ~/.local/share/pnpm/pnpm
             cd ./git/bipo.dev
             git pull
             pnpm run build
