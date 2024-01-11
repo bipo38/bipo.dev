@@ -17,6 +17,8 @@ jobs:
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            npm --help
             npm install -g pnpm
-            pnpm --help
+            cd ./git/bipo.dev/
+            git pull
+            pnpm run build
+            cp -r ./dist/* /var/www/bipo.dev/
