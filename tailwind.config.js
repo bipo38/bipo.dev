@@ -9,7 +9,7 @@ export default {
     },
 
     textColor: {
-      main: "rgb(212 212 212)",
+      main: "hsl(0, 0%, 83.14%)",
       invert: "hsl(0, 0%, 9%)",
       accent: "hsl(22, 72%, 72%)",
       go: "hsl(192, 99%, 42%)",
@@ -17,6 +17,7 @@ export default {
       nuxt: "hsl(155, 100%, 43%)",
       hono: "hsl(25, 98%, 44%)",
       typescript: "hsl(211, 60%, 48%)",
+      astro: "hsl(22, 100%, 50%)",
       scss: "hsl(330, 50%, 60%)",
     },
     fontFamily: {

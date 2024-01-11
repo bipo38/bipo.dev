@@ -9,16 +9,12 @@
     ]
   },
   {
-    "name": "litehouse ",
-    "link": "https://github.com/bipo38/litehouse",
-    "description": "A small web app to track your web page vitals with Lighthouse or PageSpeed.",
+    "name": "bipo.dev",
+    "link": "https://github.com/bipo38/bipo.dev",
+    "description": "My personal website",
     "pinned": true,
     "tags": [
-      "vue",
-      "nuxt",
-      "hono",
-      "scss",
-      "ts"
+      "astro"
     ]
   }
 ]

@@ -19,15 +19,16 @@ const tagsColors: Record<string, string> = {
   hono: "text-hono",
   scss: "text-scss",
   ts: "text-typescript",
+  astro: "text-astro",
 };
 ---
 
 <div
-  class="min-[500px]:max-w-[14rem] flex flex-col gap-2 border-primary p-[0.75rem] rounded-lg shadow-md"
+  class="min-[515px]:max-w-[14rem] flex flex-[0_0_100%] w-auto flex-col gap-2 border-primary p-[0.75rem] rounded-lg shadow-md"
 >
   <a href={link} target="_blank" class="underline text-lg">{name}</a>
   <p class="m-0">{description}</p>
-  <div class="flex gap-2 mb-auto flex-wrap">
+  <div class="flex gap-2 mt-auto flex-wrap">
     {
       tags.map((tag: string) => (
         <span class={`${tagsColors[tag]} opacity-65 capitalize`}>{tag}</span>
