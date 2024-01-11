@@ -1,20 +1,21 @@
-name: build-update
+name: update-refresh
 
 on:
   push:
     branches: ["master"]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Connect to server and update current build
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{secrets.HOST}}
-        username: ${{secrets.USERNAME}}
-        password: ${{secrets.PASSWORD}}
-        script: |
-          cd ./git/bipo.dev
-          git pull
-          pnpm run build
-          cp -r ./dist/* /var/www/bipo.dev/
+  run_build_update_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and update current build
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          script: |
+            cd ./git/bipo.dev
+            git pull
+            pnpm run build
+            cp -r ./dist/* /var/www/bipo.dev/
