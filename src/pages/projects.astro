@@ -10,7 +10,7 @@ import BackLink from "../components/BackLink.astro";
     <BackLink url="/" />
     <h1 class="text-2xl mb-0">Projects</h1>
 
-    <div class="flex gap-4 flex-wrap md:flex-nowra">
+    <div class="flex gap-4 flex-wrap md:flex-nowrap">
       {projects.slice(0, 4).map((project) => <ProjectCard {project} />)}
     </div>
   </main>
