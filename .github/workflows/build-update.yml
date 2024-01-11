@@ -18,5 +18,5 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm --help
-            curl -fsSL https://get.pnpm.io/install.sh | sh -
+           \npm install -g pnpm
             pnpm --help
