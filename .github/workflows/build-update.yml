@@ -15,7 +15,7 @@ jobs:
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           script: |
-            curl -fsSL https://get.pnpm.io/install.sh | sh -
+            exec bash \-l
             cd ./git/bipo.dev
             git pull
             pnpm run build
