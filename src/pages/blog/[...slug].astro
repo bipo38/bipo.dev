@@ -20,13 +20,13 @@ type Props = {
 const {
   post,
   post: {
-    data: { title, date },
+    data: { title, date, description },
   },
 } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Base>
+<Base title={title} description={description}>
   <BackLink url={"/blog"} />
   <h1 class="text-4xl text-center font-medium">{title}</h1>
   <span class="block mt-2">{date}</span>
