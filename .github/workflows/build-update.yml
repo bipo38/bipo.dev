@@ -16,6 +16,7 @@ jobs:
           password: ${{secrets.PASSWORD}}
           script: |
             bash -l -c "$(cat <<- EOF
+            exec bash \-l
             cd ./git/bipo.dev/
             git pull
             pnpm run build
