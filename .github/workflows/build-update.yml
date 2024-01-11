@@ -15,7 +15,6 @@ jobs:
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           script: |
-            exec bash \-l
             bash -l -c "$(cat <<- EOF
             git pull
             pnpm run build
