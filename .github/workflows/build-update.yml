@@ -18,8 +18,7 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm install -g pnpm
-            pnpm setup
-            pnpm add -g svgo
+            npm install -g svgo
             cd ./git/bipo.dev/
             svgo ./assets/svg/*
             git pull
