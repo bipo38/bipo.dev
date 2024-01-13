@@ -20,7 +20,7 @@ jobs:
             npm install -g pnpm
             npm install -g svgo
             cd ./git/bipo.dev/
-            svgo ./assets/svg/*
+            svgo ./src/assets/svg/*
             git pull
             pnpm run build
             cp -r ./dist/* /var/www/bipo.dev/
